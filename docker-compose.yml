@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  redis:
+    image: redis/redis-stack:6.2.6-v7
+    restart: always
+    environment:
+      REDIS_ARGS: "--requirepass password --user username on >password ~* allcommands --user default off nopass nocommands"
+    ports:
+      - "6379:6379"
+  demo:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    # command: sleep 100000000000000000000000
+    depends_on:
+    - redis

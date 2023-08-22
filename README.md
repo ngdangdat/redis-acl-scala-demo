@@ -13,6 +13,8 @@ val cli = RedisClient.create("redis://username:password@redis:6379/");
 ...
 ```
 
+Example run (assembly step might takes a while)
+
 ```sh
 docker compose run demo
 [+] Creating 1/0
